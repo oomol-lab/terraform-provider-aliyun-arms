@@ -58,20 +58,13 @@ development override for `registry.terraform.io/oomol-lab/aliyun-arms`.
 
 ## Releasing
 
-Releases are built by GitHub Actions and GoReleaser. Maintainers must configure
-the following Actions secrets before pushing the first release tag:
+Releases are built by GitHub Actions and GoReleaser. Create and push a semantic
+version tag such as `v0.1.0`; no repository secrets are required. The release
+workflow builds platform-specific zip archives, a Terraform manifest, and a
+SHA-256 checksum file, then publishes them to GitHub Releases.
 
-- `GPG_PRIVATE_KEY`: ASCII-armored private key for signing release checksums.
-- `PASSPHRASE`: passphrase for the signing key.
-
-Create and push a semantic version tag such as `v0.1.0`. The release workflow
-builds platform-specific zip archives, a Terraform Registry manifest, SHA-256
-checksums, and a detached GPG signature. Published release assets must never be
-replaced; fixes require a new version.
-
-Once this repository is public, it can be registered as
-`oomol-lab/aliyun-arms` in the public Terraform Registry using the corresponding
-GPG public key.
+Release assets are not currently GPG-signed or published through the Terraform
+Registry. Published assets must never be replaced; fixes require a new version.
 
 ## Current limitations
 
