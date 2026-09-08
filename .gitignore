@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+dist/
+terraform-provider-aliyun-arms

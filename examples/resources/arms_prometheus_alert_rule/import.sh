@@ -1,0 +1,1 @@
+terraform import arms_prometheus_alert_rule.pod_restart 5510445
